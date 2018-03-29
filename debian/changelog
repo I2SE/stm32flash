@@ -1,0 +1,30 @@
+stm32flash (0.5-1) unstable; urgency=medium
+
+  [ Tormod Volden ]
+  * New upstream release
+  * Drop debian/patches/i2c-linuxonly.patch (applied upstream)
+  * Standards-Version bumped to 3.9.6 (no changes needed)
+
+  [ Andrew Shadura ]
+  * Update the copyright file.
+  * Don't detect Windows-only zipballs from the upstream.
+
+ -- Tormod Volden <debian.tormod@gmail.com>  Mon, 15 Feb 2016 13:01:34 +0300
+
+stm32flash (0.4-2) unstable; urgency=medium
+
+  * Fix build on Hurd and kFreeBSD.
+
+ -- Andrew Shadura <andrewsh@debian.org>  Mon, 06 Oct 2014 22:04:43 +0200
+
+stm32flash (0.4-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #763972).
+
+ -- Andrew Shadura <andrewsh@debian.org>  Mon, 06 Oct 2014 08:35:56 +0200
+
+stm32flash (0.3+dfsg-1) unstable; urgency=medium
+
+  * Initial release (Closes: #735917).
+
+ -- Andrew Shadura <andrewsh@debian.org>  Tue, 22 Jul 2014 18:46:45 +0200

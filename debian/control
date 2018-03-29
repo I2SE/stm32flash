@@ -1,0 +1,28 @@
+Source: stm32flash
+Section: electronics
+Priority: extra
+Maintainer: Andrew Shadura <andrewsh@debian.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+Homepage: http://stm32flash.sourceforge.net/
+
+Package: stm32flash
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: STM32 chip flashing utility using a serial bootloader
+ stm32flash is a flashing program for the STM32 ARM processors using the ST
+ serial bootloader compliant with application note AN3155.
+ .
+ Features:
+  * device identification
+  * write to flash/RAM
+  * read from flash/RAM
+  * auto-detect Intel hex or raw binary input format with option to force binary
+  * flash from binary file
+  * save flash to binary file
+  * verify and retry up to N times on failed writes
+  * start execution at specified address
+  * software reset the device when finished if -g not specified
+  * resume already initialized connection (for when reset fails)
+  * GPIO signalling
+  * I²C support
