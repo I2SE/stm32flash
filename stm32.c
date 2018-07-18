@@ -381,7 +381,7 @@ static stm32_err_t stm32_send_init_seq(const stm32_t *stm)
 		return STM32_ERR_OK;
 	}
 	if (p_err != PORT_ERR_TIMEDOUT) {
-		fprintf(stderr, "Failed to init device.\n");
+		fprintf(stderr, "Failed to init device #1 (recv = 0x%02X).\n", byte);
 		return STM32_ERR_UNKNOWN;
 	}
 
@@ -397,7 +397,13 @@ static stm32_err_t stm32_send_init_seq(const stm32_t *stm)
 	p_err = port->read(port, &byte, 1);
 	if (p_err == PORT_ERR_OK && byte == STM32_NACK)
 		return STM32_ERR_OK;
-	fprintf(stderr, "Failed to init device.\n");
+
+	if (p_err != PORT_ERR_TIMEDOUT) {
+		fprintf(stderr, "Failed to init device #2 (recv = 0x%02X).\n", byte);
+	} else {
+		fprintf(stderr, "Failed to init device #2 (timeout).\n");
+	}
+
 	return STM32_ERR_UNKNOWN;
 }
 
